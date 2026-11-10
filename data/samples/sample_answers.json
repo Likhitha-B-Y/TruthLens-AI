@@ -1,0 +1,98 @@
+{
+  "note": "Expected labels are what a careful human reader would assign using the sample documents. The NLI model can disagree on individual claims; that is exactly why borderline cases are flagged for review.",
+  "answers": [
+    {
+      "id": "eiffel",
+      "title": "Eiffel Tower (mixed answer)",
+      "answer": "The Eiffel Tower was completed in 1889 and is located in Paris. It is 150 metres tall. The tower is repainted every seven years. It was designed by the Italian sculptor Michelangelo. The tower's top-floor restaurant has held three Michelin stars since 2015.",
+      "expected": [
+        {
+          "text": "The Eiffel Tower was completed in 1889.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "The Eiffel Tower is located in Paris.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "The Eiffel Tower is 150 metres tall.",
+          "label": "CONTRADICTED"
+        },
+        {
+          "text": "The tower is repainted every seven years.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "It was designed by the Italian sculptor Michelangelo.",
+          "label": "CONTRADICTED"
+        },
+        {
+          "text": "The tower's top-floor restaurant has held three Michelin stars since 2015.",
+          "label": "INSUFFICIENT_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "id": "photosynthesis",
+      "title": "Photosynthesis (mixed answer)",
+      "answer": "Photosynthesis takes place in the chloroplasts. Chlorophyll reflects green light, which is why leaves look green. Photosynthesis happens in the mitochondria. The process produces glucose and oxygen. Plants absorb carbon dioxide through their stomata. Photosynthesis was first described by Aristotle.",
+      "expected": [
+        {
+          "text": "Photosynthesis takes place in the chloroplasts.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Chlorophyll reflects green light, which is why leaves look green.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Photosynthesis happens in the mitochondria.",
+          "label": "CONTRADICTED"
+        },
+        {
+          "text": "The process produces glucose and oxygen.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Plants absorb carbon dioxide through their stomata.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Photosynthesis was first described by Aristotle.",
+          "label": "INSUFFICIENT_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "id": "solar",
+      "title": "Solar System (mixed answer)",
+      "answer": "Jupiter is the largest planet in the Solar System. Venus is the hottest planet because of its thick atmosphere. Mars has three moons. Mercury is the closest planet to the Sun and Neptune is the farthest. Saturn has 146 confirmed moons.",
+      "expected": [
+        {
+          "text": "Jupiter is the largest planet in the Solar System.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Venus is the hottest planet because of its thick atmosphere.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Mars has three moons.",
+          "label": "CONTRADICTED"
+        },
+        {
+          "text": "Mercury is the closest planet to the Sun.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Neptune is the farthest.",
+          "label": "SUPPORTED"
+        },
+        {
+          "text": "Saturn has 146 confirmed moons.",
+          "label": "INSUFFICIENT_EVIDENCE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/fraunces";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 248 250 252; --surface: 255 255 255; --sunken: 241 245 249; --line: 226 232 240;
+  --ink: 15 23 42; --muted: 100 116 139;
+  --brand: 23 50 77; --brand-fg: 255 255 255;
+  --secondary: 15 118 110; --accent: 124 58 237;
+  --ok: 21 128 61; --ok-bg: 220 252 231; --bad: 185 28 28; --bad-bg: 254 226 226; --warn: 180 83 9; --warn-bg: 254 243 199;
+  color-scheme: light;
+}
+.dark {
+  --bg: 10 16 30; --surface: 16 25 42; --sunken: 22 33 54; --line: 38 52 78;
+  --ink: 226 232 240; --muted: 148 163 184;
+  --brand: 56 101 150; --brand-fg: 255 255 255;
+  --secondary: 94 234 212; --accent: 167 139 250;
+  --ok: 74 222 128; --ok-bg: 20 83 45; --bad: 252 165 165; --bad-bg: 127 29 29; --warn: 252 211 77; --warn-bg: 120 53 15;
+  color-scheme: dark;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg text-ink font-sans antialiased; font-feature-settings: "tnum" 1, "cv11" 1; }
+  ::selection { background: rgb(var(--accent) / 0.25); }
+  h1, h2, h3 { @apply tracking-tight; }
+}
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-surface shadow-card; }
+  .focus-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg; }
+  .input { @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 transition; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-secondary; }
+}
+.skeleton { position: relative; overflow: hidden; @apply rounded-xl bg-sunken; }
+.skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(var(--surface) / 0.7), transparent); animation: shimmer 1.4s infinite; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }

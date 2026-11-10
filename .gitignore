@@ -1,0 +1,23 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# node
+frontend/node_modules/
+# runtime data (created on first run)
+data/truthlens.db*
+data/uploads/*
+!data/uploads/.gitkeep
+data/models/*
+!data/models/.gitkeep
+reports/*
+!reports/.gitkeep
+# evaluation downloads and caches
+evaluation/data/
+evaluation/cache/*
+!evaluation/cache/.gitkeep
+evaluation/results/*
+!evaluation/results/.gitkeep
+*.log
+.DS_Store
